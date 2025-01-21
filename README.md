@@ -1,1 +1,133 @@
-# pdf_chatbot
+# Chatbot Application Documentation
+
+## Overview
+This chatbot application is designed to provide interactive and intelligent responses to user queries. It leverages natural language processing (NLP) models for generating embeddings, retrieving relevant information, and facilitating seamless conversations. The application is built using Python and integrates several services and utilities for efficient functionality.
+
+### Features
+- **Interactive Chat**: Responds to user queries with contextual and relevant answers.
+- **PDF Upload and Processing**: Users can upload PDF documents, and the chatbot can extract and retrieve information from them.
+- **Embedding Service**: Converts text into embeddings for similarity calculations and retrieval tasks.
+- **API Integration**: Exposes endpoints for chat and PDF-related operations.
+- **Customizable Configurations**: Includes a configuration file for easy customization of settings.
+
+---
+
+## Setup Instructions
+
+### Prerequisites
+1. **Python**: Ensure Python 3.8 or higher is installed.
+2. **Virtual Environment**: It is recommended to use a virtual environment for dependency management.
+3. **Dependencies**: Install the required libraries listed in `requirements.txt`.
+
+### Steps
+1. Clone the repository:
+   ```bash
+   git clone <repository_url>
+   cd MAIN_V4
+   ```
+
+2. Create and activate a virtual environment:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
+
+3. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. Configure the application:
+   - Modify `.streamlit/config.toml` for UI settings.
+   - Update `utils/config.py` for application-specific configurations.
+
+5. Run the application:
+   ```bash
+   python app.py
+   ```
+
+6. Access the application:
+   Open your browser and navigate to `http://localhost:8501`.
+
+---
+
+## API Documentation
+
+### Base URL
+`http://localhost:8501`
+
+### Endpoints
+
+#### 1. **Chat Endpoint**
+   - **URL**: `/chat`
+   - **Method**: POST
+   - **Description**: Handles user queries and returns chatbot responses.
+   - **Request Body**:
+     ```json
+     {
+       "query": "<user_query>"
+     }
+     ```
+   - **Response**:
+     ```json
+     {
+       "response": "<chatbot_response>"
+     }
+     ```
+
+#### 2. **PDF Upload Endpoint**
+   - **URL**: `/upload-pdf`
+   - **Method**: POST
+   - **Description**: Allows users to upload PDF files for information retrieval.
+   - **Request Body**:
+     - Form-data with key `file` containing the PDF.
+   - **Response**:
+     ```json
+     {
+       "status": "success",
+       "message": "PDF uploaded successfully."
+     }
+     ```
+
+#### 3. **Retrieve PDF Metadata**
+   - **URL**: `/pdf-metadata`
+   - **Method**: GET
+   - **Description**: Fetches metadata of uploaded PDFs.
+   - **Response**:
+     ```json
+     {
+       "metadata": [
+         {
+           "title": "<title>",
+           "author": "<author>",
+           "pages": <number_of_pages>
+         }
+       ]
+     }
+     ```
+
+---
+
+## Features and Functionalities
+
+### Chatbot
+- **Contextual Responses**: Uses embeddings and similarity calculations to provide meaningful answers.
+- **Customizable Models**: Allows integration with different NLP models.
+
+### PDF Handling
+- **Upload PDFs**: Users can upload documents for analysis.
+- **Metadata Extraction**: Retrieves title, author, and page count.
+- **Content Retrieval**: Finds relevant sections based on user queries.
+
+### Embedding Service
+- **Text to Embedding**: Converts user queries and document chunks into embeddings for similarity comparison.
+- **Device Management**: Automatically moves tensors to CPU for compatibility.
+
+---
+
+## Notes
+- Ensure that the `uploads` directory is writable for storing uploaded files.
+- Logs and debugging information are stored in the `logs` directory.
+
+For additional support, please refer to the code comments or contact the development team.
+

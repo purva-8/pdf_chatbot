@@ -23,7 +23,6 @@ This chatbot application is designed to provide interactive and intelligent resp
 1. Clone the repository:
    ```bash
    git clone <repository_url>
-   cd MAIN_V4
    ```
 
 2. Create and activate a virtual environment:
@@ -38,12 +37,11 @@ This chatbot application is designed to provide interactive and intelligent resp
    ```
 
 4. Configure the application:
-   - Modify `.streamlit/config.toml` for UI settings.
    - Update `utils/config.py` for application-specific configurations.
 
 5. Run the application:
    ```bash
-   python app.py
+   streamlit run app.py
    ```
 
 6. Access the application:
@@ -96,11 +94,13 @@ This chatbot application is designed to provide interactive and intelligent resp
    - **Response**:
      ```json
      {
-       "metadata": [
+       "pdf_id": [
          {
-           "title": "<title>",
-           "author": "<author>",
-           "pages": <number_of_pages>
+           "name": "pdf_name",
+           "path": "pdf_path",
+           "embeddings_path": "embeddings_path",
+           "text": "extracted_text",
+           "file_path": "file_path"
          }
        ]
      }
@@ -127,7 +127,4 @@ This chatbot application is designed to provide interactive and intelligent resp
 
 ## Notes
 - Ensure that the `uploads` directory is writable for storing uploaded files.
-- Logs and debugging information are stored in the `logs` directory.
-
-For additional support, please refer to the code comments or contact the development team.
 

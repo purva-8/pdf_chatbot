@@ -5,7 +5,7 @@ import numpy as np
 def chunk_pdf_text(pdf_text, chunk_size=500):
     return [pdf_text[i:i+chunk_size] for i in range(0, len(pdf_text), chunk_size)]
 
-# Retrieve the most relevant chunk using TF-IDF
+# Retrieve the most relevant chunk
 def retrieve_with_tfidf(question, chunks):
     vectorizer = TfidfVectorizer(stop_words="english")
     tfidf_matrix = vectorizer.fit_transform(chunks)

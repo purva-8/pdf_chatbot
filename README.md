@@ -23,7 +23,6 @@ This chatbot application is designed to provide interactive and intelligent resp
 1. Clone the repository:
    ```bash
    git clone <repository_url>
-   cd MAIN_V4
    ```
 
 2. Create and activate a virtual environment:
@@ -38,18 +37,38 @@ This chatbot application is designed to provide interactive and intelligent resp
    ```
 
 4. Configure the application:
-   - Modify `.streamlit/config.toml` for UI settings.
    - Update `utils/config.py` for application-specific configurations.
 
 5. Run the application:
    ```bash
-   python app.py
+   streamlit run app.py
    ```
 
 6. Access the application:
    Open your browser and navigate to `http://localhost:8501`.
 
 ---
+## Docker Setup Instructions
+To run the application using Docker, make sure Docker is installed on your system. Follow the steps below:
+
+1. Build the Docker image:
+   ```bash
+   docker build -t streamlit-app .
+   ```
+2. Create and run the Docker container:
+   ```bash
+   docker run -itd --name pdf-chatbot -p 8051:801 streamlit-app
+   ```
+3. Build the Docker image:
+   ```bash
+   docker ps
+   ```
+4. View logs for troubleshooting:
+   ```bash
+   docker logs <container-id-of-pdf-chatbot>
+   ```
+5. Access the application:
+    Paste the network URL provided in the logs into your browser, and the application will be running!
 
 ## API Documentation
 
@@ -96,11 +115,13 @@ This chatbot application is designed to provide interactive and intelligent resp
    - **Response**:
      ```json
      {
-       "metadata": [
+       "pdf_id": [
          {
-           "title": "<title>",
-           "author": "<author>",
-           "pages": <number_of_pages>
+           "name": "pdf_name",
+           "path": "pdf_path",
+           "embeddings_path": "embeddings_path",
+           "text": "extracted_text",
+           "file_path": "file_path"
          }
        ]
      }
@@ -127,7 +148,4 @@ This chatbot application is designed to provide interactive and intelligent resp
 
 ## Notes
 - Ensure that the `uploads` directory is writable for storing uploaded files.
-- Logs and debugging information are stored in the `logs` directory.
-
-For additional support, please refer to the code comments or contact the development team.
 

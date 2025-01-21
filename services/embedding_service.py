@@ -17,7 +17,7 @@ def generate_and_save_embeddings(pdf_id, extracted_text):
     
     return embeddings_path
 
-# Compute the similarity between the user's question and PDF content
+# Cosine similarity
 def compute_similarity(question_embedding, pdf_embeddings):
     similarities = cosine_similarity(question_embedding.reshape(1, -1), pdf_embeddings)
     return similarities

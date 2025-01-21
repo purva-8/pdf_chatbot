@@ -11,7 +11,7 @@ def find_most_relevant_text(question, pdf_data):
         pdf_text = pdf_data["text"]
         chunks = chunk_pdf_text(pdf_text)
 
-        # Retrieve the best chunk using TF-IDF
+        # Retrieve the best chunk
         relevant_chunk = retrieve_with_tfidf(question, chunks)
 
         # Encode question and chunk embeddings

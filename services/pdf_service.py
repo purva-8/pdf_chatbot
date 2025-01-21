@@ -46,7 +46,7 @@ def extract_text_from_pdf(pdf_path):
     except Exception as e:
         print(f"Error with pdfplumber: {e}")
 
-    # If no text was extracted, use OCR as a fallback
+    #If no text was extracted, use OCR as a fallback
     if not text.strip():
         print("No text extracted with pdfplumber. Falling back to OCR.")
         text = extract_text_with_ocr(pdf_path)

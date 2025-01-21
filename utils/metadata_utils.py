@@ -9,7 +9,7 @@ def load_metadata(file_path):
             with open(file_path, "r") as f:
                 metadata = json.load(f)  
         except json.JSONDecodeError:
-            # If JSON decoding fails, log a warning and reset the metadata
+            #If JSON decoding fails, log a warning and reset the metadata
             print("Warning: Metadata file is corrupted. Resetting...")
             metadata = {}
     else:

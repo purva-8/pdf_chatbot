@@ -30,7 +30,7 @@ def handle_pdf_upload():
             st.success(f"The PDF '{file_name}' is already uploaded and available!")
             return pdf_metadata 
         else:
-            # generate its ID and metadata
+            #generate its ID and metadata
             pdf_id, pdf_data = process_pdf_upload(uploaded_file)
 
             # Save the uploaded file using its unique pdf_id

@@ -22,7 +22,7 @@ def save_chat_history(pdf_id, chat_history):
     with open(file_path, "w") as file:
         json.dump(chat_history, file, indent=4)
 
-# chat functionality
+#chat functionality
 def handle_chat(pdf_id, pdf_data):
 
     if "chat_histories" not in st.session_state:

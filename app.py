@@ -13,7 +13,7 @@ with st.sidebar:
     if not pdf_metadata:
         st.info("No PDFs uploaded yet.  \nPlease upload a PDF to get started.")
 
-    # Radio button list
+    #Radio button list
     selected_pdf_name = None 
     if pdf_metadata:
         selected_pdf_name = st.radio(

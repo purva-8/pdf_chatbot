@@ -1,7 +1,7 @@
 from sklearn.feature_extraction.text import TfidfVectorizer
 import numpy as np
 
-# Chunk PDF text into smaller pieces
+#Chunk PDF text into smaller pieces
 def chunk_pdf_text(pdf_text, chunk_size=500):
     return [pdf_text[i:i+chunk_size] for i in range(0, len(pdf_text), chunk_size)]
 

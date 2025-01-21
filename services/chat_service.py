@@ -14,7 +14,7 @@ def generate_chat_response(question, pdf_data):
         model = genai.GenerativeModel("gemini-1.5-flash")
         response = model.generate_content(prompt)
         
-        # Return the response text, or a fallback message if the response is empty
+        #Return the response text, or a fallback message if the response is empty
         if response and response.text.strip():
             return response.text.strip()
         else:

@@ -1,11 +1,11 @@
 # Chatbot Application Documentation
 
 ## Overview
-This chatbot application is designed to provide interactive and intelligent responses to user queries. It leverages natural language processing (NLP) models for generating embeddings, retrieving relevant information, and facilitating seamless conversations. The application is built using Python and integrates several services and utilities for efficient functionality.
+This chatbot application is designed to provide interactive and intelligent responses to user queries. It leverages NLP models for generating embeddings, retrieving relevant information, and facilitating seamless conversations. The application is built using Python and integrates several services and utilities for efficiency.
 
 ### Features
 - **Interactive Chat**: Responds to user queries with contextual and relevant answers.
-- **PDF Upload and Processing**: Users can upload PDF documents, and the chatbot can extract and retrieve information from them.
+- **PDF Upload and Processing**: Users can upload PDF documents which are processed further.
 - **Embedding Service**: Converts text into embeddings for similarity calculations and retrieval tasks.
 - **API Integration**: Exposes endpoints for chat and PDF-related operations.
 - **Customizable Configurations**: Includes a configuration file for easy customization of settings.

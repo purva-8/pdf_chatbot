@@ -6,7 +6,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 embedding_model = SentenceTransformer('all-MiniLM-L6-v2')
 
-# Generate and save embeddings for the PDF text
+#Generate and save embeddings for the PDF text
 def generate_and_save_embeddings(pdf_id, extracted_text):
     text_lines = extracted_text.split("\n")
     embeddings = embedding_model.encode(text_lines, convert_to_tensor=False)  # Get a 2D array

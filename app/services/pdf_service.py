@@ -9,7 +9,7 @@ import pytesseract
 # extract text and save embeddings
 def process_pdf_upload(uploaded_file):
     pdf_id = str(uuid.uuid4())
-    file_path = f'uploads/{pdf_id}.pdf'
+    file_path = f'../data/uploads/{pdf_id}.pdf'
     
     # Save the uploaded file with a unique ID
     with open(file_path, "wb") as f:

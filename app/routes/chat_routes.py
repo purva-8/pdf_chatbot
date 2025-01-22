@@ -3,7 +3,7 @@ import os
 import json
 from services.chat_service import generate_chat_response
 
-CHAT_HISTORY_FOLDER = "chat_history"
+CHAT_HISTORY_FOLDER = "../data/chat_history"
 
 if not os.path.exists(CHAT_HISTORY_FOLDER):
     os.makedirs(CHAT_HISTORY_FOLDER)

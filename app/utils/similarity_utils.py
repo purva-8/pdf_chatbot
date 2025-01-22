@@ -16,10 +16,10 @@ def find_most_relevant_text(question, pdf_data):
 
         # Encode question and chunk embeddings
         question_embedding = model.encode([question], convert_to_tensor=True)
-        chunk_embeddings = model.encode(chunks, convert_to_tensor=True)
+        chunk_embeddings = model.encode(relevant_chunk, convert_to_tensor=True)
 
         #Refine context using embeddings
-        similarities = cosine_similarity(question_embedding.reshape(1, -1), chunk_embeddings)
+        similarities = cosine_similarity(question_embedding.reshape(1, -1), chunk_embeddings.reshape(1, -1))
         best_chunk_idx = np.argmax(similarities)
         return chunks[best_chunk_idx]
     except Exception as e:

@@ -4,7 +4,7 @@ from services.embedding_service import generate_and_save_embeddings
 from utils.metadata_utils import load_metadata, save_metadata_safely
 import os
 
-UPLOAD_FOLDER = 'uploads'
+UPLOAD_FOLDER = "../data/uploads"
 
 if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
@@ -12,7 +12,7 @@ if not os.path.exists(UPLOAD_FOLDER):
 # PDF upload and processing
 def handle_pdf_upload():
     uploaded_file = st.file_uploader("Upload PDF", type="pdf")
-    pdf_metadata = load_metadata('pdf_metadata.json')
+    pdf_metadata = load_metadata('../data/pdf_metadata.json')
 
     if uploaded_file:
         
@@ -42,7 +42,7 @@ def handle_pdf_upload():
             pdf_data["file_path"] = file_path
 
             # Save the new metadata
-            save_metadata_safely(pdf_id, pdf_data, 'pdf_metadata.json')
+            save_metadata_safely(pdf_id, pdf_data, '../data/pdf_metadata.json')
             pdf_metadata[pdf_id] = pdf_data
             
             st.success(f"File '{file_name}' uploaded and processed successfully!")

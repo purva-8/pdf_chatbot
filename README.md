@@ -59,7 +59,7 @@ To run the application using Docker, make sure Docker is installed on your syste
    ```bash
    docker run -itd --name pdf-chatbot -p 8051:801 streamlit-app
    ```
-3. Build the Docker image:
+3. View the Running Container:
    ```bash
    docker ps
    ```

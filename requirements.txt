@@ -1,7 +1,5 @@
 streamlit
-os
-json
-sklearn
+scikit-learn
 numpy
 sentence_transformers
 google-generativeai
@@ -10,3 +8,4 @@ uuid
 pytesseract
 pdf2image
 pillow
+python-dotenv
